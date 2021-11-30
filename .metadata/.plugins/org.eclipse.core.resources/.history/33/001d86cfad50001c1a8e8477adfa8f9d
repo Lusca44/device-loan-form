@@ -1,0 +1,15 @@
+package com.lusca44.form.entities;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Order {
+
+	private Long id;
+	private Long nome;
+	private Long email;
+	private Long matricula;
+	private Long secao;
+	private Long nomeGerente;
+	
+}

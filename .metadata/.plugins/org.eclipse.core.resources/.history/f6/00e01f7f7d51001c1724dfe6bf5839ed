@@ -1,0 +1,5 @@
+package com.lusca44.form.repositories;
+
+public interface OrderRepository {
+
+}

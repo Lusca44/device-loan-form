@@ -1,0 +1,6 @@
+package com.lusca44.form.entities;
+
+
+public class Order {
+
+}

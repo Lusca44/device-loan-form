@@ -1,0 +1,16 @@
+package com.lusca44.form.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lusca44.form.repositories.OrderRepository;
+
+@Service
+public class OrderService {
+	
+	@Autowired
+	private OrderRepository repo;
+	
+	
+	
+}
