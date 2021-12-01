@@ -16,10 +16,10 @@ function Form() {
 		setMatricula("");
 		setSecao("");
 		setNomeGerente("");
-		if (notebook == true) {
+		if (notebook === true) {
 			handleChangeNotebook();
 		}
-		if (celular == true) {
+		if (celular === true) {
 			handleChangeCelular();
 		}
 	};
@@ -30,6 +30,19 @@ function Form() {
 
 	const handleChangeNotebook = () => {
 		setNotebook(!notebook);
+	};
+
+	const handleOrderObj = () => {
+		const order = {
+			nome,
+			email,
+			matricula,
+			secao,
+			nomeGerente,
+			notebook,
+			celular
+		};
+		return order;
 	};
 
 	return (
@@ -152,14 +165,8 @@ function Form() {
 
 						<div className="col-12 d-flex justify-content-center">
 							<Button
+								handleOrderObj={handleOrderObj}
 								handleLimpa={handleLimpa}
-								nome={nome}
-								email={email}
-								matricula={matricula}
-								secao={secao}
-								nomeGerente={nomeGerente}
-								notebook={notebook}
-								celular={celular}
 							/>
 						</div>
 					</form>
