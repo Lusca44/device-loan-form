@@ -7,6 +7,7 @@ html,
 body {
 	height: 100%;
 	font-family: "Ubuntu", sans-serif;
+	background-color: #f8f9fa;
 }
 
 #root {
@@ -33,5 +34,13 @@ body {
 }
 
 .esp {
-	margin-bottom: 30px;
+	margin-bottom: 80px;
+	box-shadow: 0 0 0 2px #ccc;
+	background-color: #fff;
+}
+
+.form {
+	background-color: rgb(238, 230, 220);
+	padding: 30px;
+	border-radius: 2%;
 }

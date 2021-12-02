@@ -1,7 +1,7 @@
 function Header() {
 	return (
 		<>
-			<div className="bg-primary esp">
+			<div className="esp">
 				<h1 className="d-flex justify-content-center">
 					Formulário para empréstimo
 				</h1>

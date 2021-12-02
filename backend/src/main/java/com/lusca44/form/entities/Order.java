@@ -1,12 +1,16 @@
 package com.lusca44.form.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.lusca44.form.enums.Status;
 
 @Entity
 @Table(name = "tb_order")
@@ -21,14 +25,22 @@ public class Order implements Serializable {
 	private String matricula;
 	private String secao;
 	private String nomeGerente;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
+	private Instant dataPedido = Instant.now();
 	private Boolean notebook = false;
 	private Boolean celular = false;
+	
+	private Integer status;
+	
+	{
+		this.status = Status.ENVIADO.getCode();
+	}
 	
 	public Order() {
 	}
 
-	public Order(Long id, String nome, String email, String matricula, String secao, String nomeGerente, Boolean notebook, Boolean celular) {
-		this.id = id;
+	public Order(String nome, String email, String matricula, String secao, String nomeGerente,
+			Boolean notebook, Boolean celular) {
 		this.nome = nome;
 		this.email = email;
 		this.matricula = matricula;
@@ -36,6 +48,7 @@ public class Order implements Serializable {
 		this.nomeGerente = nomeGerente;
 		this.notebook = notebook;
 		this.celular = celular;
+		
 	}
 
 	public Long getId() {
@@ -86,6 +99,10 @@ public class Order implements Serializable {
 		this.nomeGerente = nomeGerente;
 	}
 
+	public Instant getDataPedido() {
+		return dataPedido;
+	}
+	
 	public Boolean getNotebook() {
 		return notebook;
 	}
@@ -101,5 +118,17 @@ public class Order implements Serializable {
 	public void setCelular(Boolean celular) {
 		this.celular = celular;
 	}
+
+	public Status getStatus() {
+		return Status.valueOf(status);
+	}
+
+	public void setStatus(Status status) {
+		if(status != null) {
+			this.status = status.getCode();
+		}
+	}
+
+	
 	
 }

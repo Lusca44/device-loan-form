@@ -1,0 +1,24 @@
+package com.lusca44.form.enums;
+
+public enum Status {
+
+	ENVIADO(0),
+	RECEBIDO(1),
+	PROCESSANDO(2),
+	FINALIZADO(3);
+	
+	private int code;
+	
+	private Status(int code) {
+		this.code = code;
+	}
+
+	public int getCode() {
+		return code;
+	}
+	
+	public void setCode() {
+		this.code = code;
+	}
+	
+}
